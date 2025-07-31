@@ -14,18 +14,20 @@ import{aq as N,ar as B,aj as R}from"./index-SSvFfhA5.js";const V=()=>{if(window.
       <div class="w-50 px-3">
         <h4 class="text-center">Free Version</h4>
         <ul class="gray-list px-4">
-          <p>✔️ ≤ 2 Videos</p>
-          <p>✔️ ≤ 10 Photos</p>
+          <p>✅ Unlimited Videos</p>
+          <p>✅ Unlimited Photos</p>
+          <p>✅ Download Messages Content</p>
+          <p>✅ Support Time Period Download</p>
         </ul>
       </div>
     `,"text/html").body.firstElementChild),a.append(_.parseFromString(`
       <div class="w-50 px-3">
         <h4 class="text-center">Pro Version</h4>
         <ul class="gray-list px-4">
-          <p>✅ Unlimit Videos</p>
-          <p>✅ Unlimit Photos</p>
+          <p>✅ Unlimited Videos</p>
+          <p>✅ Unlimited Photos</p>
           <p>✅ Download Messages Content</p>
           <p>✅ Support Time Period Download</p>
         </ul>
       </div>
-    `,"text/html").body.firstElementChild);const s=document.createElement("footer");s.classList.add("modal-footer","g-border-top","justify-content-around"),m.append(s);const c=document.createElement("button");c.classList.add("g-btn","m-flat","m-btn-gaps","m-reset-width"),c.textContent="Use Free Version",c.addEventListener("click",()=>F.classList.remove("show")),s.append(c);const l=document.createElement("button");l.classList.add("g-btn","m-rounded","m-reset-width"),l.textContent="UPGRADE NOW!!",l.addEventListener("click",()=>{chrome.runtime.sendMessage({command:"ToSubscription"}),F.classList.remove("show")}),s.append(l),document.body.append(w)})};chrome.runtime.onMessage.addListener((d,O,S)=>{const{command:k,payload:E}=d;if(k==="ToSubscription"&&N("subscribe"),k==="Download"){const{url:_,filename:w}=E;chrome.downloads.download({url:_,filename:w})}return k==="ToHomesite"&&chrome.tabs.create({url:"https://hlsdownloader.com/"}),k==="updateQuota"&&B().then(_=>S(_)),!0});let C=[];chrome.tabs.onUpdated.addListener(async(d,O,S)=>{var _,w,F,T;if(O.status==="complete"&&((_=S.url)==null?void 0:_.indexOf("onlyfans.com"))!==-1&&await chrome.scripting.executeScript({target:{tabId:d},func:V,world:"MAIN"}),!((w=R.value)!=null&&w.isPro||!((F=await chrome.cookies.get({url:"https://onlyfans.com",name:"auth_id"}))==null?void 0:F.value))&&O.status==="complete"&&(T=S.url)!=null&&T.includes("onlyfans.com")){if(C.includes(d))return;try{const m=await chrome.tabs.get(d);if(!(m!=null&&m.active))return;await chrome.scripting.executeScript({target:{tabId:d},func:I}),C.push(d)}catch(m){console.log("Injection failed:",m),C=C.filter(q=>q!==d)}}});chrome.runtime.onInstalled.addListener(async d=>{d.reason==chrome.runtime.OnInstalledReason.INSTALL&&N("/")});chrome.action.onClicked.addListener(()=>{N("/")});
+    `,"text/html").body.firstElementChild);const s=document.createElement("footer");s.classList.add("modal-footer","g-border-top","justify-content-around"),m.append(s);const c=document.createElement("button");c.classList.add("g-btn","m-flat","m-btn-gaps","m-reset-width"),c.textContent="Use Free Version",c.addEventListener("click",()=>F.classList.remove("show")),s.append(c);const l=document.createElement("button");l.classList.add("g-btn","m-rounded","m-reset-width"),l.textContent="UPGRADE NOW!!",l.addEventListener("click",()=>{chrome.runtime.sendMessage({command:"ToSubscription"}),F.classList.remove("show")}),s.append(l),document.body.append(w)})};chrome.runtime.onMessage.addListener((d,O,S)=>{const{command:k,payload:E}=d;if(k==="ToSubscription"&&N("subscribe"),k==="Download"){const{url:_,filename:w}=E;chrome.downloads.download({url:_,filename:w})}return k==="ToHomesite"&&chrome.tabs.create({url:"https://hlsdownloader.com/"}),k==="updateQuota"&&B().then(_=>S(_)),!0});let C=[];chrome.tabs.onUpdated.addListener(async(d,O,S)=>{var _,w,F,T;if(O.status==="complete"&&((_=S.url)==null?void 0:_.indexOf("onlyfans.com"))!==-1&&await chrome.scripting.executeScript({target:{tabId:d},func:V,world:"MAIN"}),false){if(C.includes(d))return;try{const m=await chrome.tabs.get(d);if(!(m!=null&&m.active))return;await chrome.scripting.executeScript({target:{tabId:d},func:I}),C.push(d)}catch(m){console.log("Injection failed:",m),C=C.filter(q=>q!==d)}}});chrome.runtime.onInstalled.addListener(async d=>{d.reason==chrome.runtime.OnInstalledReason.INSTALL&&N("/")});chrome.action.onClicked.addListener(()=>{N("/")});
